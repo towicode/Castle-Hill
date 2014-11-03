@@ -49,7 +49,7 @@ label splashscreen:
     scene black
     with Pause(1)
 
-    show text "Nu American Whore Presents..." with dissolve
+    show text "Nu American Horror Presents..." with dissolve
     with Pause(2)
 
     hide text with dissolve
@@ -61,19 +61,19 @@ label splashscreen:
     hide text with dissolve
     with Pause(1)
     
-    show text "Written: Raithfyre & Kirby" with dissolve
+    show text "Written: Raithfyre & Able" with dissolve
     with Pause(2)
 
     hide text with dissolve
     with Pause(1)
     
-    show text "Music: McDoogle" with dissolve
+    show text "Music: McDoogle & Able" with dissolve
     with Pause(2)
 
     hide text with dissolve
     with Pause(1)
     
-    show text "Art: UHRUHKUH" with dissolve
+    show text "Art: Hiko27" with dissolve
     with Pause(2)
 
     hide text with dissolve

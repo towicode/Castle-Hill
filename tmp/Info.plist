@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Castle Hill</string>
+	<string>CastleHill</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -20,19 +20,19 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>Castle Hill</string>
+	<string>CastleHill</string>
 	<key>CFBundleIconFile</key>
 	<string>icon</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Castle Hill</string>
+	<string>CastleHill</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>casHilBuild</string>
+	<string>casHilBuildxx</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.1415008617</string>
+	<string>1.0.1415011880</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.simulation-games</string>
 	<key>UTExportedTypeDeclarations</key>

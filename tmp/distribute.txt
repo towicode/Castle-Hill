@@ -36,7 +36,7 @@ game/bg/town2.png matches ** ([u'all']).
 game/bg/trail1.png matches ** ([u'all']).
 game/bg/trail2.png matches ** ([u'all']).
 game/bg/trail3.png matches ** ([u'all']).
-game/bg/trial4.png matches ** ([u'all']).
+game/bg/trail4.png matches ** ([u'all']).
 game/bg kitchen-dining.jpg matches ** ([u'all']).
 game/bg kitchen.jpg matches ** ([u'all']).
 game/bg road.jpg matches ** ([u'all']).
@@ -150,6 +150,7 @@ game/sfx/Truck Door.ogg matches ** ([u'all']).
 game/sfx/Truck Start.ogg matches ** ([u'all']).
 game/sfx/Woodpile.ogg matches ** ([u'all']).
 game/shutdoor.ogg matches ** ([u'all']).
+game/splash.png matches ** ([u'all']).
 game/sting.ogg matches ** ([u'all']).
 game/thud.ogg matches ** ([u'all']).
 game/truckoff.ogg matches ** ([u'all']).
@@ -164,10 +165,11 @@ game/yesno/quitconf_hover.png matches ** ([u'all']).
 game/yesno/quitconf_idle.png matches ** ([u'all']).
 game/yesno/return_to_menu.png matches ** ([u'all']).
 game/yesno/sure_quit.png matches ** ([u'all']).
+LICENSE.txt matches ** ([u'all']).
 log.txt matches log.txt (None).
+New Text Document.txt matches ** ([u'all']).
 project.json matches project.json (None).
-README.html matches ** ([u'all']).
-README.md matches ** ([u'all']).
+README.txt matches ** ([u'all']).
 tmp/ matches tmp/ (None).
 traceback.txt matches traceback.txt (None).
 doc/ doesn't match anything.
