@@ -187,7 +187,7 @@ screen main_menu():
         hotspot (570, 370, 190, 35) action ShowMenu("load")
         hotspot (570, 400, 190, 35) action ShowMenu("cg_gallery")
         hotspot (570, 435, 190, 35) action ShowMenu("preferences")
-        hotspot (570, 475, 190, 35) action ShowMenu("test")
+        hotspot (570, 475, 190, 35) action ShowMenu("random_name_32")
         hotspot (570, 505, 190, 45) action Quit(confirm=True)
 
 ##############################################################################
@@ -205,6 +205,17 @@ screen navigation():
             alpha False
 
             hotspot (1051, 633, 115, 26) action Return()
+            
+screen random_name_32():
+        tag menu
+        imagemap:
+            ground "credits/credits_idle.png"
+            idle  "credits/credits_idle.png"
+            hover "credits/credits_hover.png"
+            alpha False
+
+            hotspot (1049, 628, 120, 33) action Return()
+
 
 
 
@@ -304,8 +315,7 @@ screen save():
         hotspot (704,407,355,188) clicked FileSave(4):
             use load_save_slot(number=4)
             #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
-
-        hotspot (1048,361,121,32) action Return()
+        hotspot (1048,628,121,36) action Return()
 
 screen load():
 
@@ -333,8 +343,7 @@ screen load():
         hotspot (704,407,355,188) clicked FileLoad(4):
             use load_save_slot(number=4)
             #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
-
-        hotspot (1048,361,121,32) action Return()
+        hotspot (1048,628,121,36) action Return()
 
     
 
@@ -375,13 +384,13 @@ screen preferences():
         
         hotspot (463, 288, 176,33) action Preference("skip", "seen")
         hotspot (672, 291, 153, 30) action Preference("skip", "all")
-        hotspot (1048,361,121,32) action Return()
+        hotspot (1049, 628, 120, 33) action Return()
 
 
         
         bar pos (531, 176) value Preference("text speed") style "pref_slider"
-        bar pos (531, 405) value Preference("sound volume") style "pref_slider"
-        bar pos (531, 520) value Preference("music volume") style "pref_slider"
+        bar pos (531, 405) value Preference("music volume") style "pref_slider"
+        bar pos (531, 520) value Preference("sound volume") style "pref_slider"
         
 
 init -2 python:
@@ -500,7 +509,6 @@ screen cg_gallery:
     tag menu
     imagemap:
         ground "menu/background.png"
-    use navigation
     frame background None xpos 10:
         grid gal_rows gal_cols:
             ypos 10
@@ -514,6 +522,8 @@ screen cg_gallery:
                     add g_cg.make_button(gal_item + " butt", gal_item + " butt", im.Scale("gallocked.png", thumbnail_x, thumbnail_y), xalign=0.5, yalign=0.5, idle_border=None, background=None, bottom_margin=24)
             for j in range(i, (cg_page+1)*gal_cells): #we need this to fully fill the grid
                 null
+    use navigation
+
 screen bg_gallery:
 #The BG gallery screen is more or less copy pasted from the CG screen above, I only changed "make_button" to include a grayscale thumbnail for locked items
     tag menu

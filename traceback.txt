@@ -1,28 +1,44 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00keymap.rpy", line 290, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 304, in <module>
-    renpy.save("_reload-1", "reload save game")
-PicklingError: Can't pickle <type 'function'>: attribute lookup __builtin__.function failed
+  File "game/script.rpy", line 191, in script
+    "The crows started to caw again, threatening that I should leave."
+  File "renpy/common/00nvl_mode.rpy", line 285, in do_display
+    **display_args)
+IOError: Couldn't find file 'crow_noises.ogg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00keymap.rpy", line 290, in script
-    python hide:
-  File "F:\game\renpy-6.18.3-sdk\renpy\ast.py", line 785, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "F:\game\renpy-6.18.3-sdk\renpy\python.py", line 1382, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "renpy/common/00keymap.rpy", line 304, in <module>
-    renpy.save("_reload-1", "reload save game")
-  File "F:\game\renpy-6.18.3-sdk\renpy\loadsave.py", line 275, in save
-    dump((roots, renpy.game.log), logf)
-  File "F:\game\renpy-6.18.3-sdk\renpy\loadsave.py", line 43, in dump
-    cPickle.dump(o, f, cPickle.HIGHEST_PROTOCOL)
-PicklingError: Can't pickle <type 'function'>: attribute lookup __builtin__.function failed
+  File "game/script.rpy", line 191, in script
+    "The crows started to caw again, threatening that I should leave."
+  File "F:\game\renpy-6.18.3-sdk\renpy\ast.py", line 593, in execute
+    renpy.exports.say(who, what, interact=self.interact)
+  File "F:\game\renpy-6.18.3-sdk\renpy\exports.py", line 999, in say
+    who(what, interact=interact)
+  File "F:\game\renpy-6.18.3-sdk\renpy\character.py", line 826, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "renpy/common/00nvl_mode.rpy", line 285, in do_display
+    **display_args)
+  File "F:\game\renpy-6.18.3-sdk\renpy\character.py", line 491, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "F:\game\renpy-6.18.3-sdk\renpy\ui.py", line 247, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\core.py", line 2149, in interact
+    repeat, rv = self.interact_core(preloads=preloads, **kwargs)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\core.py", line 2428, in interact_core
+    renpy.audio.audio.interact()
+  File "F:\game\renpy-6.18.3-sdk\renpy\audio\audio.py", line 946, in interact
+    periodic()
+  File "F:\game\renpy-6.18.3-sdk\renpy\audio\audio.py", line 880, in periodic
+    c.periodic()
+  File "F:\game\renpy-6.18.3-sdk\renpy\audio\audio.py", line 349, in periodic
+    topf = load(self.file_prefix + topq.filename + self.file_suffix)
+  File "F:\game\renpy-6.18.3-sdk\renpy\audio\audio.py", line 83, in load
+    rv = renpy.loader.load(fn)
+  File "F:\game\renpy-6.18.3-sdk\renpy\loader.py", line 438, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'crow_noises.ogg'.
 
 Windows-7-6.1.7601-SP1
 Ren'Py 6.18.3.761
