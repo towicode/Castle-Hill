@@ -1,0 +1,9 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/screens.rpy", line 365: end of line expected.
+    style preferences.background = "nvl/textbox.png"
+                     ^
+
+Ren'Py Version: Ren'Py 6.18.3.761

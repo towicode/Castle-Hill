@@ -311,12 +311,9 @@ init -2:
 screen preferences():
 
     tag menu
-    imagemap:
-         ground "menu/background.png"
 
     # Include the navigation.
     use navigation
-    
 
     # Put the navigation columns in a three-wide grid.
     grid 3 1:
@@ -325,6 +322,21 @@ screen preferences():
 
         # The left column.
         vbox:
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Display")
+                textbutton _("Window") action Preference("display", "window")
+                textbutton _("Fullscreen") action Preference("display", "fullscreen")
+
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Transitions")
+                textbutton _("All") action Preference("transitions", "all")
+                textbutton _("None") action Preference("transitions", "none")
 
             frame:
                 style_group "pref"
@@ -333,6 +345,11 @@ screen preferences():
                 label _("Text Speed")
                 bar value Preference("text speed")
 
+            frame:
+                style_group "pref"
+                has vbox
+
+                textbutton _("Joystick...") action Preference("joystick")
 
 
         vbox:
@@ -343,6 +360,30 @@ screen preferences():
                 label _("Skip")
                 textbutton _("Seen Messages") action Preference("skip", "seen")
                 textbutton _("All Messages") action Preference("skip", "all")
+
+            frame:
+                style_group "pref"
+                has vbox
+
+                textbutton _("Begin Skipping") action Skip()
+
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("After Choices")
+                textbutton _("Stop Skipping") action Preference("after choices", "stop")
+                textbutton _("Keep Skipping") action Preference("after choices", "skip")
+
+            frame:
+                style_group "pref"
+                has vbox
+
+                label _("Auto-Forward Time")
+                bar value Preference("auto-forward time")
+
+                if config.has_voice:
+                    textbutton _("Wait for Voice") action Preference("wait for voice", "toggle")
 
         vbox:
             frame:
@@ -364,12 +405,25 @@ screen preferences():
                         action Play("sound", config.sample_sound)
                         style "soundtest_button"
 
+            if config.has_voice:
+                frame:
+                    style_group "pref"
+                    has vbox
+
+                    label _("Voice Volume")
+                    bar value Preference("voice volume")
+
+                    textbutton _("Voice Sustain") action Preference("voice sustain", "toggle")
+                    if config.sample_voice:
+                        textbutton _("Test"):
+                            action Play("voice", config.sample_voice)
+                            style "soundtest_button"
+
 init -2:
-        
     style pref_frame:
         xfill True
-        xmargin 30
-        top_margin 30
+        xmargin 5
+        top_margin 5
 
     style pref_vbox:
         xfill True
@@ -396,33 +450,44 @@ screen yesno_prompt(message, yes_action, no_action):
 
     modal True
 
-    imagemap:
-        ground 'yesno/quitconf_ground.png'
-        idle 'yesno/quitconf_idle.png' 
-        hover 'yesno/quitconf_hover.png'
-        
-        alpha False
-        
-        hotspot (515, 343, 95, 33) action yes_action
-        hotspot (678, 346, 98, 29) action no_action
-    
-    if message == layout.ARE_YOU_SURE:
-        add "cg/button.png"
- 
-    elif message == layout.DELETE_SAVE:
-        add "cg/button.png"
-        
-    elif message == layout.OVERWRITE_SAVE:
-        add "cg/button.png"
-        
-    elif message == layout.LOADING:
-        add "cg/button.png"
-        
-    elif message == layout.QUIT:
-        add "cg/button.png"
-        
-    elif message == layout.MAIN_MENU:
-        add "cg/button.png"
+    window:
+        style "gm_root"
+
+    frame:
+        style_group "yesno"
+
+        xfill True
+        xmargin .05
+        ypos .1
+        yanchor 0
+        ypadding .05
+
+        has vbox:
+            xalign .5
+            yalign .5
+            spacing 30
+
+        label _(message):
+            xalign 0.5
+
+        hbox:
+            xalign 0.5
+            spacing 100
+
+            textbutton _("Yes") action yes_action
+            textbutton _("No") action no_action
+
+    # Right-click and escape answer "no".
+    key "game_menu" action no_action
+
+init -2:
+    style yesno_button:
+        size_group "yesno"
+
+    style yesno_label_text:
+        text_align 0.5
+        layout "subtitle"
+
 
 ##############################################################################
 # Quick Menu

@@ -10,15 +10,7 @@ init python hide:
         if file.startswith('bg') and file.endswith('.jpg'):
             name = file.replace('BG/','').replace('/', ' ').replace('.jpg','')
             renpy.image(name, Image(file))
-    config.empty_window = nvl_show_core
-    config.window_hide_transition = dissolve
-    config.window_show_transition = dissolve
-    style.nvl_window.background = "nvl/textbox.png"
-    style.nvl_window.xpadding = 140
-    style.nvl_window.ypadding = 50
-
 init:
-    $ narrator = Character(None, kind=nvl)
     image cg1 = "cg/test.png"
     image cg2 = "cg/test.png"
     image cg3 = "cg/test.png"
@@ -32,8 +24,8 @@ init:
 # The game starts here.
 label start:
     scene bg kitchen
-    "You've created a new Ren'Py game."
+    e "You've created a new Ren'Py game."
     #scene bg kitchen dining
     scene cg2
-    "Once you add a story, pictures, and music, you can release it to the world!"
+    e "Once you add a story, pictures, and music, you can release it to the world!"
     return

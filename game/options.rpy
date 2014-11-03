@@ -19,6 +19,8 @@ init -1 python hide:
 
     config.screen_width = 1280
     config.screen_height = 720
+    config.gl_resize = False
+
 
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
@@ -44,23 +46,23 @@ init -1 python hide:
         ## Color scheme: Colorblind
 
         ## The color of an idle widget face.
-        widget = "#898989",
+        widget = "#2E2A2A",
 
         ## The color of a focused widget face.
-        widget_hover = "#464646",
+        widget_hover = "#000000",
 
         ## The color of the text in a widget.
         widget_text = "#CCCCCC",
 
         ## The color of the text in a selected widget. (For
         ## example, the current value of a preference.)
-        widget_selected = "#F2F2F2",
+        widget_selected = "#CCCCCC",
 
         ## The color of a disabled widget face.
-        disabled = "#898989",
+        disabled = "#000000",
 
         ## The color of disabled widget text.
-        disabled_text = "#666666",
+        disabled_text = "#000000",
 
         ## The color of informational labels.
         label = "#c2c2c2",
@@ -145,7 +147,7 @@ init -1 python hide:
 
     ## The file containing the default font.
 
-    # style.default.font = "DejaVuSans.ttf"
+    style.default.font = "AppleSpice.ttf"
 
     ## The default size of text.
 

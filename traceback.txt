@@ -1,0 +1,67 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00start.rpy", line 193, in script
+    python:
+  File "renpy/common/00start.rpy", line 197, in <module>
+    renpy.call_in_new_context("_main_menu")
+  File "renpy/common/00action_menu.rpy", line 97, in __call__
+    raise Exception("%r is not a screen or a label." % orig_screen)
+Exception: 'credits' is not a screen or a label.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "renpy/common/00start.rpy", line 193, in script
+    python:
+  File "F:\game\renpy-6.18.3-sdk\renpy\ast.py", line 785, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "F:\game\renpy-6.18.3-sdk\renpy\python.py", line 1382, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/00start.rpy", line 197, in <module>
+    renpy.call_in_new_context("_main_menu")
+  File "F:\game\renpy-6.18.3-sdk\renpy\game.py", line 283, in call_in_new_context
+    return renpy.execution.run_context(False)
+  File "F:\game\renpy-6.18.3-sdk\renpy\execution.py", line 598, in run_context
+    context.run()
+  File "renpy/common/_layout/screen_main_menu.rpym", line 29, in script
+    $ ui.interact()
+  File "F:\game\renpy-6.18.3-sdk\renpy\ast.py", line 785, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "F:\game\renpy-6.18.3-sdk\renpy\python.py", line 1382, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "renpy/common/_layout/screen_main_menu.rpym", line 29, in <module>
+    $ ui.interact()
+  File "F:\game\renpy-6.18.3-sdk\renpy\ui.py", line 247, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\core.py", line 2149, in interact
+    repeat, rv = self.interact_core(preloads=preloads, **kwargs)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\core.py", line 2750, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\layout.py", line 846, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\layout.py", line 846, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\layout.py", line 846, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\screen.py", line 626, in event
+    rv = self.child.event(ev, x, y, st)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\layout.py", line 846, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\layout.py", line 846, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\layout.py", line 846, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\behavior.py", line 762, in event
+    return handle_click(self.clicked)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\behavior.py", line 705, in handle_click
+    rv = run(action)
+  File "F:\game\renpy-6.18.3-sdk\renpy\display\behavior.py", line 274, in run
+    return var(*args, **kwargs)
+  File "renpy/common/00action_menu.rpy", line 97, in __call__
+    raise Exception("%r is not a screen or a label." % orig_screen)
+Exception: 'credits' is not a screen or a label.
+
+Windows-7-6.1.7601-SP1
+Ren'Py 6.18.3.761
+Castle Hill 0.0
