@@ -187,7 +187,7 @@ screen main_menu():
         hotspot (570, 370, 190, 35) action ShowMenu("load")
         hotspot (570, 400, 190, 35) action ShowMenu("cg_gallery")
         hotspot (570, 435, 190, 35) action ShowMenu("preferences")
-        hotspot (570, 475, 190, 35) action ShowMenu("credits")
+        hotspot (570, 475, 190, 35) action ShowMenu("test")
         hotspot (570, 505, 190, 45) action Quit(confirm=True)
 
 ##############################################################################
@@ -283,23 +283,77 @@ screen save():
     # This ensures that any other menu screen is replaced.
     tag menu
 
-    use navigation
-    use file_picker
+    imagemap:
+        ground "saveload/saveload_ground.png"
+        idle "saveload/saveload_idle.png"
+        hover "saveload/saveload_hover.png"
+        cache False
+     
+        hotspot (164,256,58,40) clicked FilePage(1) 
+        hotspot (163,325,60,37) clicked FilePage(2) 
+        hotspot (164,390,52,41) clicked FilePage(3) 
+        hotspot (136,455,93,36) clicked FilePage("auto")
+
+        
+        hotspot (271,145,355,180) clicked FileSave(1):
+            use load_save_slot(number=1) 
+        hotspot (705,145,354,181) clicked FileSave(2):
+            use load_save_slot(number=2)
+        hotspot (274,405,354,180) clicked FileSave(3):
+            use load_save_slot(number=3) 
+        hotspot (704,407,355,188) clicked FileSave(4):
+            use load_save_slot(number=4)
+            #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
+
+        hotspot (1048,361,121,32) action Return()
 
 screen load():
 
     # This ensures that any other menu screen is replaced.
     tag menu
+    
+    imagemap:
+        ground "saveload/saveload_ground.png"
+        idle "saveload/saveload_idle.png"
+        hover "saveload/saveload_hover.png"
+        cache False
+     
+        hotspot (164,256,58,40) clicked FilePage(1) 
+        hotspot (163,325,60,37) clicked FilePage(2) 
+        hotspot (164,390,52,41) clicked FilePage(3) 
+        hotspot (136,455,93,36) clicked FilePage("auto")
 
-    use navigation
-    use file_picker
+        
+        hotspot (271,145,355,180) clicked FileLoad(1):
+            use load_save_slot(number=1) 
+        hotspot (705,145,354,181) clicked FileLoad(2):
+            use load_save_slot(number=2)
+        hotspot (274,405,354,180) clicked FileLoad(3):
+            use load_save_slot(number=3) 
+        hotspot (704,407,355,188) clicked FileLoad(4):
+            use load_save_slot(number=4)
+            #activate_sound "FILE NAME HERE" hover_sound "FILE NAME HERE"
 
-init -2:
-    style file_picker_frame is menu_frame
-    style file_picker_nav_button is small_button
-    style file_picker_nav_button_text is small_button_text
-    style file_picker_button is large_button
-    style file_picker_text is large_button_text
+        hotspot (1048,361,121,32) action Return()
+
+    
+
+
+screen load_save_slot:
+    $ file_text = "% 2s. %s\n%s" % (
+                        FileSlotName(number, 4),
+                        FileTime(number, empty=_("Empty Slot")),
+                        FileSaveName(number))
+
+    add FileScreenshot(number) xpos 0 ypos 0
+    text file_text xpos 0 ypos 10 size 40 color "#ffffff" outlines [ (2, "#302B54") ] kerning 2 font "AppleSpice.ttf"
+    
+    key "save_delete" action FileDelete(number)
+    
+init -2 python:
+    
+    config.thumbnail_width = 355
+    config.thumbnail_height = 180
 
 
 ##############################################################################
@@ -311,81 +365,36 @@ init -2:
 screen preferences():
 
     tag menu
-    imagemap:
-         ground "menu/background.png"
-
-    # Include the navigation.
-    use navigation
-    
-
-    # Put the navigation columns in a three-wide grid.
-    grid 3 1:
-        style_group "prefs"
-        xfill True
-
-        # The left column.
-        vbox:
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Text Speed")
-                bar value Preference("text speed")
-
-
-
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Skip")
-                textbutton _("Seen Messages") action Preference("skip", "seen")
-                textbutton _("All Messages") action Preference("skip", "all")
-
-        vbox:
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Music Volume")
-                bar value Preference("music volume")
-
-            frame:
-                style_group "pref"
-                has vbox
-
-                label _("Sound Volume")
-                bar value Preference("sound volume")
-
-                if config.sample_sound:
-                    textbutton _("Test"):
-                        action Play("sound", config.sample_sound)
-                        style "soundtest_button"
-
-init -2:
+    imagemap:   
+        ground "pref/pref_ground.png"
+        idle "pref/pref_idle.png"
+        hover "pref/pref_hover.png"
+        selected_idle "pref/pref_select_idle.png" 
+        selected_hover "pref/pref_select_hover.png" 
+        alpha False
         
-    style pref_frame:
-        xfill True
-        xmargin 30
-        top_margin 30
-
-    style pref_vbox:
-        xfill True
-
-    style pref_button:
-        size_group "pref"
-        xalign 1.0
-
-    style pref_slider:
-        xmaximum 192
-        xalign 1.0
-
-    style soundtest_button:
-        xalign 1.0
+        hotspot (463, 288, 176,33) action Preference("skip", "seen")
+        hotspot (672, 291, 153, 30) action Preference("skip", "all")
+        hotspot (1048,361,121,32) action Return()
 
 
+        
+        bar pos (531, 176) value Preference("text speed") style "pref_slider"
+        bar pos (531, 405) value Preference("sound volume") style "pref_slider"
+        bar pos (531, 520) value Preference("music volume") style "pref_slider"
+        
+
+init -2 python:
+    style.pref_slider.left_bar = "pref/bar_left.png"
+    style.pref_slider.right_bar = "pref/bar_right.png"
+
+    style.pref_slider.xmaximum = 215
+    style.pref_slider.ymaximum = 35
+
+    style.pref_slider.thumb = "pref/bar_thumb.png"
+    style.pref_slider.thumb_offset = 4
+    style.pref_slider.thumb_shadow = None
+ 
 ##############################################################################
 # Yes/No Prompt
 #
@@ -407,22 +416,22 @@ screen yesno_prompt(message, yes_action, no_action):
         hotspot (678, 346, 98, 29) action no_action
     
     if message == layout.ARE_YOU_SURE:
-        add "cg/button.png"
+        add "'yesno/sure_quit.png"
  
     elif message == layout.DELETE_SAVE:
-        add "cg/button.png"
+        add "'yesno/delete_save_game.png"
         
     elif message == layout.OVERWRITE_SAVE:
-        add "cg/button.png"
+        add "'yesno/overwrite_saved_game.png"
         
     elif message == layout.LOADING:
-        add "cg/button.png"
+        add "yesno/load_saved_game.png"
         
     elif message == layout.QUIT:
-        add "cg/button.png"
+        add "yesno/sure_quit.png"
         
     elif message == layout.MAIN_MENU:
-        add "cg/button.png"
+        add "yesno/return_to_menu.png"
 
 ##############################################################################
 # Quick Menu
@@ -489,6 +498,8 @@ init +1 python:
         
 screen cg_gallery:
     tag menu
+    imagemap:
+        ground "menu/background.png"
     use navigation
     frame background None xpos 10:
         grid gal_rows gal_cols:
@@ -503,12 +514,6 @@ screen cg_gallery:
                     add g_cg.make_button(gal_item + " butt", gal_item + " butt", im.Scale("gallocked.png", thumbnail_x, thumbnail_y), xalign=0.5, yalign=0.5, idle_border=None, background=None, bottom_margin=24)
             for j in range(i, (cg_page+1)*gal_cells): #we need this to fully fill the grid
                 null
-        frame:
-            yalign 0.97
-            vbox:
-                if len(gallery_cg_items)>gal_cells:
-                    textbutton _("Next Page") action [SetVariable('cg_page', next_cg_page), ShowMenu("cg_gallery")]
-
 screen bg_gallery:
 #The BG gallery screen is more or less copy pasted from the CG screen above, I only changed "make_button" to include a grayscale thumbnail for locked items
     tag menu

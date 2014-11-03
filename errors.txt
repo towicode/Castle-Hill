@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 365: end of line expected.
-    style preferences.background = "nvl/textbox.png"
-                     ^
+File "game/script.rpy", line 77: expected statement.
+    MainMenu()
+              ^
 
 Ren'Py Version: Ren'Py 6.18.3.761

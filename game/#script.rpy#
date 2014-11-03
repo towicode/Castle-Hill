@@ -75,56 +75,7 @@ label splashscreen:
     hide text with dissolve
     with Pause(1)
     return
-    
-    ##GAME START
-    
-label test:
-    scene black
-    with Pause(1)
-
-    show text "Nu American Whore Presents..." with dissolve
-    with Pause(2)
-
-    hide text with dissolve
-    with Pause(1)
-    
-    show text "A 48 hour Production..." with dissolve
-    with Pause(2)
-
-    hide text with dissolve
-    with Pause(1)
-    
-    show text "Written: Raithfyre & Kirby" with dissolve
-    with Pause(2)
-
-    hide text with dissolve
-    with Pause(1)
-    
-    show text "Music: McDoogle" with dissolve
-    with Pause(2)
-
-    hide text with dissolve
-    with Pause(1)
-    
-    show text "Art: UHRUHKUH" with dissolve
-    with Pause(2)
-
-    hide text with dissolve
-    with Pause(1)
         
-    show text "Coding: Padlockcode" with dissolve
-    with Pause(2)
-
-    hide text with dissolve
-    with Pause(1)
-    
-    show text "UI Art: Andeh" with dissolve
-    with Pause(2)
-
-    hide text with dissolve
-    with Pause(1)
-    return
-    
     ##GAME START
 label start:
    scene dark

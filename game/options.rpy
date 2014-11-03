@@ -31,6 +31,7 @@ init -1 python hide:
     # with tracebacks and other debugging logs.
     config.name = "Castle Hill"
     config.version = "0.0"
+    config.main_menu_music = "music/Menu_Music.ogg"
 
     #########################################
     # Themes
@@ -46,23 +47,23 @@ init -1 python hide:
         ## Color scheme: Colorblind
 
         ## The color of an idle widget face.
-        widget = "#2E2A2A",
+        widget = "#CCCCCC",
 
         ## The color of a focused widget face.
-        widget_hover = "#000000",
+        widget_hover = "#919191",
 
         ## The color of the text in a widget.
-        widget_text = "#CCCCCC",
+        widget_text = "#000000",
 
         ## The color of the text in a selected widget. (For
         ## example, the current value of a preference.)
-        widget_selected = "#CCCCCC",
+        widget_selected = "#FFFFFF",
 
         ## The color of a disabled widget face.
         disabled = "#000000",
 
         ## The color of disabled widget text.
-        disabled_text = "#000000",
+        disabled_text = "#919191",
 
         ## The color of informational labels.
         label = "#c2c2c2",
