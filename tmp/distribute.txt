@@ -1,11 +1,49 @@
 .git/ matches **/.** (None).
 .gitignore matches **/.** (None).
+casHilBuild-win.zip matches ** ([u'all']).
 errors.txt matches errors.txt (None).
 game/ matches ** ([u'all']).
 game/AppleSpice.ttf matches ** ([u'all']).
+game/bg/ matches ** ([u'all']).
+game/bg/cg1.png matches ** ([u'all']).
+game/bg/cg2.png matches ** ([u'all']).
+game/bg/cg3.png matches ** ([u'all']).
+game/bg/cg4.png matches ** ([u'all']).
+game/bg/cg5.png matches ** ([u'all']).
+game/bg/cg6.png matches ** ([u'all']).
+game/bg/chap1.png matches ** ([u'all']).
+game/bg/chap2.png matches ** ([u'all']).
+game/bg/chap3.png matches ** ([u'all']).
+game/bg/chap4.png matches ** ([u'all']).
+game/bg/chap5.png matches ** ([u'all']).
+game/bg/field1.png matches ** ([u'all']).
+game/bg/field2.png matches ** ([u'all']).
+game/bg/field3.png matches ** ([u'all']).
+game/bg/field4.png matches ** ([u'all']).
+game/bg/fire1.png matches ** ([u'all']).
+game/bg/grandpa.png matches ** ([u'all']).
+game/bg/horizon1.png matches ** ([u'all']).
+game/bg/horizon2.png matches ** ([u'all']).
+game/bg/prologue.png matches ** ([u'all']).
+game/bg/puncture1.png matches ** ([u'all']).
+game/bg/road2.png matches ** ([u'all']).
+game/bg/stars1.png matches ** ([u'all']).
+game/bg/stars2.png matches ** ([u'all']).
+game/bg/stoplight.png matches ** ([u'all']).
+game/bg/tower2.png matches ** ([u'all']).
+game/bg/town1.png matches ** ([u'all']).
+game/bg/town2.png matches ** ([u'all']).
+game/bg/trail1.png matches ** ([u'all']).
+game/bg/trail2.png matches ** ([u'all']).
+game/bg/trail3.png matches ** ([u'all']).
+game/bg/trial4.png matches ** ([u'all']).
 game/bg kitchen-dining.jpg matches ** ([u'all']).
 game/bg kitchen.jpg matches ** ([u'all']).
 game/bg road.jpg matches ** ([u'all']).
+game/bg town1.jpg matches ** ([u'all']).
+game/bg town1.png matches ** ([u'all']).
+game/bg town2.png matches ** ([u'all']).
+game/birdoff.ogg matches ** ([u'all']).
 game/bytecode.rpyb matches ** ([u'all']).
 game/cache/ matches ** ([u'all']).
 game/cache/im-04d21a266f62c24ebc7f3299b4fed36c.png matches ** ([u'all']).
@@ -14,14 +52,27 @@ game/cache/im-37cdbf5da0730f90507a5d6a1569c780.png matches ** ([u'all']).
 game/cache/im-39091da662b09782c398ef17c4a38f6e.png matches ** ([u'all']).
 game/cache/im-4022580f7c1802b7037b9dc914e8a3f4.png matches ** ([u'all']).
 game/cache/im-5bd8197a533b34243d29ac607efaddfd.png matches ** ([u'all']).
+game/cache/im-6c59e2db95d03f5392e2631e509a6cb4.png matches ** ([u'all']).
 game/cache/im-6e4de88fd23112905f005d8aec9bf8c8.png matches ** ([u'all']).
 game/cache/im-d0c5384ec8dde93b6f15ff2fe18ab9fe.png matches ** ([u'all']).
 game/cache/im-f7c0e5dd1aa3ff79be584bdf20473803.png matches ** ([u'all']).
 game/cg/ matches ** ([u'all']).
 game/cg/button.png matches ** ([u'all']).
 game/cg/test.png matches ** ([u'all']).
+game/chase.wav matches ** ([u'all']).
+game/chimes.ogg matches ** ([u'all']).
+game/credits/ matches ** ([u'all']).
+game/credits/credits_hover.png matches ** ([u'all']).
+game/credits/credits_idle.png matches ** ([u'all']).
+game/crows.ogg matches ** ([u'all']).
+game/driving1.ogg matches ** ([u'all']).
+game/driving2.ogg matches ** ([u'all']).
 game/gallocked.png matches ** ([u'all']).
+game/gameOver.ogg matches ** ([u'all']).
+game/GW_Open.ogg matches ** ([u'all']).
 game/HalleyveticaNBP.ttf matches ** ([u'all']).
+game/horror.ogg matches ** ([u'all']).
+game/jam1.ogg matches ** ([u'all']).
 game/menu/ matches ** ([u'all']).
 game/menu/background.png matches ** ([u'all']).
 game/menu/credits_hover.png matches ** ([u'all']).
@@ -51,6 +102,8 @@ game/options.rpy matches ** ([u'all']).
 game/options.rpy.bak matches **.bak (None).
 game/options.rpyc matches ** ([u'all']).
 game/options.rpy~ matches **~ (None).
+game/Piano1.ogg matches ** ([u'all']).
+game/Piano2.ogg matches ** ([u'all']).
 game/plx.rpy matches ** ([u'all']).
 game/plx.rpyc matches ** ([u'all']).
 game/pref/ matches ** ([u'all']).
@@ -96,6 +149,12 @@ game/sfx/Sting1.ogg matches ** ([u'all']).
 game/sfx/Truck Door.ogg matches ** ([u'all']).
 game/sfx/Truck Start.ogg matches ** ([u'all']).
 game/sfx/Woodpile.ogg matches ** ([u'all']).
+game/shutdoor.ogg matches ** ([u'all']).
+game/sting.ogg matches ** ([u'all']).
+game/thud.ogg matches ** ([u'all']).
+game/truckoff.ogg matches ** ([u'all']).
+game/truckon.ogg matches ** ([u'all']).
+game/typing.ogg matches ** ([u'all']).
 game/yesno/ matches ** ([u'all']).
 game/yesno/delete_save_game.png matches ** ([u'all']).
 game/yesno/load_saved_game.png matches ** ([u'all']).
@@ -108,6 +167,7 @@ game/yesno/sure_quit.png matches ** ([u'all']).
 log.txt matches log.txt (None).
 project.json matches project.json (None).
 README.html matches ** ([u'all']).
+README.md matches ** ([u'all']).
 tmp/ matches tmp/ (None).
 traceback.txt matches traceback.txt (None).
 doc/ doesn't match anything.
@@ -118,6 +178,8 @@ Editra.edit.py doesn't match anything.
 Editra.edit.py matches None (None).
 editra.exe doesn't match anything.
 editra.exe matches None (None).
+files.txt doesn't match anything.
+files.txt matches None (None).
 jedit/ doesn't match anything.
 jedit/ matches None (None).
 launcher/ doesn't match anything.

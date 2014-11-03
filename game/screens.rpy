@@ -464,7 +464,7 @@ screen quick_menu():
 init python:
     #Galleries settings - start
     #list the CG gallery images here:
-    gallery_cg_items = ["cg1", "cg2", "cg3", "cg4", "cg5", "cg6", "cg7", "cg8", "cg9", "cg10"]
+    gallery_cg_items = ["cg1", "cg2", "cg3", "cg4", "cg5", "cg6"]
     #list the BG gallery images here (do not include variations, such as night version):
     gallery_bg_items = ["bg kitchen", "bg road"]
     #how many rows and columns in the gallery screens?

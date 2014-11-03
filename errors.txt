@@ -2,8 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 136: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
-    "I shouldered my backpack and went for a closer look. At the edge of the woods was a metal barrier, presumably to keep off road traffic out."
-    ^
+File "game/script.rpy", line 172: expected 'simple_expression' not found.
+    show grandpa with
+                     ^
 
 Ren'Py Version: Ren'Py 6.18.3.761

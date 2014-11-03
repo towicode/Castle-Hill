@@ -1,17 +1,17 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 191, in script
-    "The crows started to caw again, threatening that I should leave."
+  File "game/script.rpy", line 550, in script
+    "It was unwise, but I slowed to a stop, pulling off to the side of the road."
   File "renpy/common/00nvl_mode.rpy", line 285, in do_display
     **display_args)
-IOError: Couldn't find file 'crow_noises.ogg'.
+IOError: Couldn't find file 'truckstop.ogg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 191, in script
-    "The crows started to caw again, threatening that I should leave."
+  File "game/script.rpy", line 550, in script
+    "It was unwise, but I slowed to a stop, pulling off to the side of the road."
   File "F:\game\renpy-6.18.3-sdk\renpy\ast.py", line 593, in execute
     renpy.exports.say(who, what, interact=self.interact)
   File "F:\game\renpy-6.18.3-sdk\renpy\exports.py", line 999, in say
@@ -38,7 +38,7 @@ Full traceback:
     rv = renpy.loader.load(fn)
   File "F:\game\renpy-6.18.3-sdk\renpy\loader.py", line 438, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'crow_noises.ogg'.
+IOError: Couldn't find file 'truckstop.ogg'.
 
 Windows-7-6.1.7601-SP1
 Ren'Py 6.18.3.761
